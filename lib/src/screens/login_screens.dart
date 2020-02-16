@@ -37,22 +37,23 @@ void setSpinnerStatus(bool status){
 @override
 Widget build(BuildContext context) {
   return Scaffold(
+   backgroundColor: Colors.grey.shade300, 
    body: ModalProgressHUD(
-  inAsyncCall: showSpinner, 
+   inAsyncCall: showSpinner, 
    child: Form (
      key: _formkey,
      child: Container(
-     padding: EdgeInsets.symmetric(horizontal: 24.0),
+     padding: EdgeInsets.symmetric(horizontal: 24),
      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           AppIcon(),
-          SizedBox(height: 48.0,),
+          SizedBox(height: 20),
           _emailField(),
-          SizedBox(height: 8.0,),
+          SizedBox(height: 7),
           _passwordField(),
-          SizedBox(height: 23.0,),
+          SizedBox(height: 20.0,),
           _showErrorMessage(),
           _submitButton()
         ],
@@ -84,7 +85,15 @@ Widget build(BuildContext context) {
 
   Widget _submitButton(){
     return AppButton(
-       color: Colors.blueAccent,
+       color: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+	                      gradient: LinearGradient(
+	                        colors: [
+	                          Color.fromRGBO(143, 148, 251, 1),
+	                          Color.fromRGBO(143, 148, 251, .6),
+	                        ] 
+         )
+       ),
             onPressed: () async {
               if(_formkey.currentState.validate()){
                 setSpinnerStatus(true);
@@ -107,7 +116,7 @@ Widget build(BuildContext context) {
 
               }
             },
-            name: 'Log in',
+            name: 'Ingresar',
           ); 
     } 
 

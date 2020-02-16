@@ -31,20 +31,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> with Validation
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       body: Form (
         key: _fomkey,
         child :Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             AppIcon(),
-            SizedBox(height: 48.0,),
+            SizedBox(height: 20),
             _emailField(),
-            SizedBox(height: 8.0,),
+            SizedBox(height: 7),
             _passwordField(),
-            SizedBox(height: 24.0,),
+            SizedBox(height: 20),
             _showErrorMessage(),
             _submitButton()
           ],
@@ -79,7 +80,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> with Validation
 
     Widget _submitButton(){
     return AppButton(
-            color: Colors.blueAccent,
+            color: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+	                      gradient: LinearGradient(
+	                        colors: [
+	                          Color.fromRGBO(143, 148, 251, 1),
+	                          Color.fromRGBO(143, 148, 251, .6),
+	                        ]
+	                      )
+            ),
             onPressed:() async{
               if(_fomkey.currentState.validate()){
                   var auth = await Autothentication().createUser(email:_emailController.text,password:_passwordController.text);

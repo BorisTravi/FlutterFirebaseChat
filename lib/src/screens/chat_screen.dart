@@ -118,8 +118,6 @@ class _ChatScreenState extends State<ChatScreen> {
 }
 }
 
-
-
 class ChatItem extends StatelessWidget {
  final String sender;
  final String message ;

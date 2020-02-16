@@ -6,11 +6,6 @@ import 'package:flutterchat_app/src/screens/welcolme_screens.dart';
 void main() {
   runApp(MaterialApp(
    home: WelcolmeScreen(),
-   theme: ThemeData(
-     textTheme: TextTheme(
-       body1: TextStyle(color: Colors.black45)
-     ),
-   ),
    initialRoute: WelcolmeScreen.routeName,  
     routes: <String, WidgetBuilder>{
       LoginScreens.routeName : (BuildContext context) => LoginScreens(),

@@ -21,15 +21,15 @@ this.validator,this.autoValidate});
           contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
           hintText: inputText,
           border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(32.0))
+          borderRadius: BorderRadius.all(Radius.circular(10))
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(32.0)),
-          borderSide: BorderSide(color: Colors.lightBlueAccent,width: 2.0) 
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(color: Colors.deepPurple[300],width: 2.0) 
         ),
           focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(32.0)),
-          borderSide: BorderSide(color: Colors.blueAccent,width: 2.0)
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderSide: BorderSide(color: Colors.indigoAccent,width: 2.0)
         )
       ),
       onSaved: onSaved,
